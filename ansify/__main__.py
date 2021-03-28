@@ -1,4 +1,5 @@
 # type: ignore[attr-defined]
+import os
 import sys
 from enum import Enum
 from pathlib import Path
@@ -15,13 +16,15 @@ app = typer.Typer(
     add_completion=False,
 )
 console = Console()
+rows, cols = os.popen("stty size", "r").read().split()
 
 
 class Grayscale(str, Enum):
-    dot = "dot"
-    cube = "cube"
     simple = "simple"
     morelevels = "morelevels"
+    pixel = "pixel"
+    dragon = "dragon"
+    emoji = "emoji"
 
 
 def version_callback(value: bool):
@@ -34,7 +37,7 @@ def version_callback(value: bool):
 @app.command(name="CLI to create ANSI/ASCII art from images.")
 def main(
     image: str = typer.Argument(..., help="Image file PATH or URL."),
-    cols: int = typer.Option(80, "-c", "--columns", help="Output columns, number of characters per line."),
+    columns: int = typer.Option(cols, "-c", "--columns", help="Output columns, number of characters per line."),
     output: Path = typer.Option(None, "-o", "--output", help="Save ANSI/ASCII art to the OUTPUT file."),
     scale: float = typer.Option(conf.SCALE, "-s", "--scale", help="The larger the scale, the thinner the art."),
     grayscale: Grayscale = typer.Option(Grayscale.simple, "-g", "--grayscale", help="Choose a built-in gray scale."),
@@ -56,7 +59,7 @@ def main(
     try:
         ansi_art(
             src=image,
-            cols=cols,
+            columns=columns,
             output=output,
             scale=scale,
             grayscale=grayscale,

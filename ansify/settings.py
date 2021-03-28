@@ -8,8 +8,9 @@ TIMEOUT = 15  # seconds
 
 # 代表灰度递减到字符
 DEFAULT_GSCALES = {
-    "dot": "·",
-    "cube": "█",
-    "simple": "@%#*+=-:· ",
-    "morelevels": r"""$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`'. """,
+    "pixel": "█",
+    "dragon": "龍",
+    "emoji": "　　🙂🙄😳😋😘😛😝😜😍😅😥🤣😂😨😭😎",
+    "simple": " ·:-=+*#%@",
+    "morelevels": r""" .'`^",:;Il!i><~+_-?][}{1)(|\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$""",
 }

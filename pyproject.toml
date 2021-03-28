@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "ansify"
-version = "0.1.0a1"
+version = "0.1.0"
 description = "Awesome `ansify` is a Python CLI to create ANSI/ASCII art from images."
 readme = "README.md"
 authors = [
@@ -32,13 +32,14 @@ classifiers = [  # Update me
 "ansify" = "ansify.__main__:app"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.6.9"
 importlib_metadata = {version = "^1.6.0", python = "<3.8"}
 typer = {extras = ["all"], version = "^0.3.2"}
-rich = "^9.13.0"
+rich = "^10.0.0"
 Pillow = "^8.1.2"
-numpy = "^1.20.1"
+numpy = "^1.19.5"
 requests = "^2.25.1"
+urwid = "^2.1.2"
 
 [tool.poetry.dev-dependencies]
 darglint = "^1.7.0"
@@ -56,7 +57,7 @@ pre-commit = "^2.11.1"
 [tool.black]
 # https://github.com/psf/black
 line-length = 120
-target-version = ["py37"]
+target-version = ["py36"]
 
 [tool.isort]
 # https://github.com/timothycrosley/isort/
