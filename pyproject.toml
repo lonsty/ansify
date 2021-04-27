@@ -50,7 +50,7 @@ mypy = "^0.790"
 bandit = "^1.7.0"
 safety = "^1.10.3"
 pytest = "^6.2.2"
-pylint = "^2.7.2"
+pylint = "^2.8.2"
 pydocstyle = "^5.1.1"
 pre-commit = "^2.11.1"
 
